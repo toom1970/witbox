@@ -38,7 +38,12 @@ if options.repo:
 root = re.sub("/+$", "", root)
 part = ""
 
+if part == "":
+    print("No such mount point found!")
+    exit(1)
 
+disk = re.sub("\d+$", "", part)
+index = part + disk
 
-
-
+boot = root / boot
+boot_iso = root / iso
